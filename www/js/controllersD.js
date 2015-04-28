@@ -23,13 +23,21 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+	var user = $scope.loginData.username;
+	var pass = $scope.loginData.password;
+	
+	var link = 'http://app-salvadorcaetano.rhcloud.com/login.php?jsoncallback';
+	
+	$.getJSON( link, {user:user, pass:pass})
+	.done(function(respostaServidor) {		
+		if(respostaServidor.validacao == "OK"){
+			alert(respostaServidor.validacao);
+			
+		}else{
+		  alert(respostaServidor.validacao);
+		}
+	})
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
   };
 })
 
