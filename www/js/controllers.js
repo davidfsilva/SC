@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -24,20 +24,22 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
 	var user = $scope.loginData.username;
-	var pass = $scope.loginData.password;
+	var pass = CryptoJS.MD5($scope.loginData.password);
 	
-	var link = 'http://app-salvadorcaetano.rhcloud.com/login.php?jsoncallback';
-	
-	$.getJSON( link, {user:user, pass:pass})
-	.done(function(respostaServidor) {		
-		if(respostaServidor.validacao == "OK"){
-			alert(respostaServidor.validacao);
-			
-		}else{
-		  alert(respostaServidor.validacao);
-		}
-	})
-
+	$http({
+        method: 'GET',
+        url: 'http://app-salvadorcaetano.rhcloud.com/login.php?jsoncallback&user='+ user +'&pass='+ pass +''
+        }).success(function(data) {
+				if(data.validacao == "OK")
+				{
+					alert("entrou");
+					
+				}else{
+					alert("password errada");
+				}
+        }).error(function(data) {
+            alert("falhou");
+        });
   };
 })
 
