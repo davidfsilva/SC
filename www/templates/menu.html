@@ -1,0 +1,43 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+      <ion-list>
+	  <div class="margens"><img class="item imagem" src="img/gsc.jpg"/></div>
+	  
+	  	  <ion-item class="item-icon-right menu-close" href="#/app">
+		 <i class="icon ion-home coricon"></i>Home
+	  </ion-item>
+	  
+	  <ion-item class="item-icon-right menu-close" href="#/app/perfil">
+		 <i class="icon ion-person coricon"></i>Perfil
+	  </ion-item>
+	  
+	  <ion-item class="item-icon-right menu-close" href="#/app/definicoes">
+		 <i class="icon ion-gear-b coricon"></i>Definições
+	  </ion-item>
+	  
+	  <ion-item class="item-icon-right menu-close" href="#/app/contactos">
+		 <i class="icon ion-ios-telephone coricon"></i>Contactos
+	  </ion-item>
+	  
+	  <ion-item class="item-icon-right menu-close" href="#/app/">
+		 <i class="icon ion-power coricon"></i>Logout
+	  </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

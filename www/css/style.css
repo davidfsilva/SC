@@ -1,0 +1,70 @@
+/* Empty. Add your own CSS if you like */
+/*SIDE MENU*/
+.imagem{
+width:100%;
+height:auto;
+border:0px;
+}
+.margens{
+margin:0%;
+padding:5%;
+width:100%;
+height:auto;
+}
+.texto{
+color:#004079;
+font-weight:bold;
+}
+.coricon{
+color:#004079;
+}
+.coricon2{
+color:#9A9C91;
+}
+
+/*HOME*/
+.botao{
+color:#004079;
+padding:4%;
+text-align:center;
+border-color:#9A9C91;
+font-weight:bold;
+}
+
+.item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated {
+  background-color: transparent; 
+  color:#0072c6;
+}
+
+/*DEFINIÇÕES*/
+.marcas{
+text-align:center;
+padding:0%;
+}
+
+.img-marcas{
+width:25%;
+border:0px;
+}
+
+.navbar-right{
+float:right;
+font-size: 150%;
+}
+
+/*PERFIL*/
+.img-center{
+text-align:center;
+}
+
+/*CONTACTOS*/
+.select {
+	color:grey;
+	font-size:100%;
+}
+
+*::-webkit-input-placeholder {
+  color: grey !important;
+  	font-size:110%;
+}
+

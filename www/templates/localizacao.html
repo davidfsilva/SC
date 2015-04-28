@@ -1,0 +1,56 @@
+<ion-view view-title="Localização">
+  <ion-content >
+	<form onchange="this.form.submit()">
+		<label class="item item-input item-select">
+			<div class="input-label">
+			  Distrito:
+			</div>
+			<select>
+				<option selected>Aveiro</option>
+				<option>Beja</option>
+				<option>Braga</option>
+				<option>Bragança</option>
+				<option>Castelo Branco</option>
+				<option>Coimbra</option>
+				<option>Évora</option>
+				<option>Faro</option>
+				<option>Guarda</option>
+				<option>Leiria</option>
+				<option>Lisboa</option>
+				<option>Portalegre</option>
+				<option>Porto</option>
+				<option>Santarém</option>
+				<option>Setúbal</option>
+				<option>Viana do Castelo</option>
+				<option>Vila Real</option>
+				<option>Viseu</option>
+			</select>
+		</label>
+	</form>
+	
+	 <ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="item in items" href="#/localizacao/{{item.IdEstabelecimento}}">
+	  <img ng-src="http://www.caetanoretail.pt/pt/_layouts/15/CanalInternet/services/IntegrationsImagesHandler.ashx?filename=company41_instalation413_photo2.jpg&contextname=PLATFORMS" height="50" width="50">
+        <h2>{{ item.NomEstabelecimento }} </h2>
+		<h3>{{item.Localidade}}</h3>
+		<h4>{{item.Morada}}</h4>
+		<span ng-if="item.Oficina == 1">
+		<IMG SRC="/img/icons/oficina.png" height="20" width="20" name="Oficina">
+		</span>
+		<span ng-if="item.Novos == 1">
+		<IMG SRC="/img/icons/novos.png" height="20" width="20" name="Novos">
+		</span>
+		<span ng-if="item.Usados == 1">
+		<IMG SRC="/img/icons/usados.png" height="20" width="20" name="Usados">
+		</span>
+		<span ng-if="item.Pecas == 1">
+		<IMG SRC="/img/icons/pecas.png" height="20" width="20" name="Pecas">
+		</span>
+		<span ng-if="item.Colisao == 1">
+		<IMG SRC="/img/icons/colisao.png" height="20" width="20" name="Colisao">
+		</span>
+      </ion-item>
+    </ion-list>
+	
+  </ion-content>
+</ion-view>
