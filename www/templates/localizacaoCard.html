@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Localização Card</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeCard()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLocalizacaoCard()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">CARD</span>
+          <input type="text" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">LOCALIZACAO</span>
+          <input type="password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
