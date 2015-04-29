@@ -3,16 +3,14 @@
 		<label class="item item-select">
 		<center><h4>{{selections}}</h4></center>
 			<span class="nullable">
-				<select ng-model="selections" ng-options="i.id as i.name for i in localizacoes" 
-						ng-change="buscaLocalizacao()" >
-				  <option value="">Escolha um distrito</option>
+				<select ng-model="selections" ng-options="i.name as i.name for i in localizacoes" ng-change="buscaLocalizacao(selections)">
 				</select>
 			</span>
 		</label>
 		<center><h4>{{selections}}</h4></center>
 		
 	 <ion-list>
-      <ion-item class="item item-thumbnail-left" ng-repeat="item in items" href="#/localizacao/{{item.IdEstabelecimento}}">
+      <ion-item class="item item-thumbnail-left" ng-repeat="item in items" href="#/localizacao/localizacaoCard/{{item.IdEstabelecimento}}">
 	  <img ng-src="http://www.caetanoretail.pt/pt/_layouts/15/CanalInternet/services/IntegrationsImagesHandler.ashx?filename=company41_instalation413_photo2.jpg&contextname=PLATFORMS" height="50" width="50">
         <h2>{{ item.NomEstabelecimento }} </h2>
 		<h3>{{item.Localidade}}</h3>
