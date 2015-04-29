@@ -44,15 +44,50 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ListCtrl', function($scope, $http) {
+	$scope.selections = "";
+$scope.localizacoes = [
+		{id:'Aveiro', name:'Aveiro'},
+		{id:'Beja', name:'Beja'},
+		{id:'Braga', name:'Braga'},
+		{id:'Bragança', name:'Bragança'},
+		{id:'Castelo Branco', name:'Castelo Branco'},
+		{id:'Coimbra', name:'Coimbra'},
+		{id:'Évora', name:'Évora'},
+		{id:'Faro', name:'Faro'},
+		{id:'Guarda', name:'Guarda'},
+		{id:'Leiria', name:'Leiria'},
+		{id:'Lisboa', name:'Lisboa'},
+		{id:'Portalegre', name:'Portalegre'},
+		{id:'Porto', name:'Porto'},
+		{id:'Santarém', name:'Santarém'},
+		{id:'Setúbal', name:'Setúbal'},
+		{id:'Viana do Castelo', name:'Viana do Castelo'},
+		{id:'Vila Real', name:'Vila Real'},
+		{id:'Viseu', name:'Viseu'}
+	];	
+	
+	
 
-        $http({
+$scope.buscaLocalizacao = function() {
+	
+	
+	alert($scope.selections);
+	
+	$http({
             method: 'GET',
             url: 'http://app-salvadorcaetano.rhcloud.com/localizacao.php?jsoncallback'
         }).success(function(data) {
-            $scope.items = data; // response data 
+            //$scope.items = data; // response data 
+			    
+				if(localizacaoDistritos.Distrito == "Braga")
+				{
+					alert("essad");
+					
+				}
         }).error(function(data) {
             console.log("failed");
-        });	
+        });
+};		
 })
 
  .controller('PerfilCtrl', function ($scope) {

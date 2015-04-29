@@ -1,33 +1,16 @@
 <ion-view view-title="Localização">
   <ion-content >
-	<form onchange="this.form.submit()">
-		<label class="item item-input item-select">
-			<div class="input-label">
-			  Distrito:
-			</div>
-			<select>
-				<option selected>Aveiro </option>
-				<option>Beja</option>
-				<option>Braga</option>
-				<option>Bragança</option>
-				<option>Castelo Branco</option>
-				<option>Coimbra</option>
-				<option>Évora</option>
-				<option>Faro</option>
-				<option>Guarda</option>
-				<option>Leiria</option>
-				<option>Lisboa</option>
-				<option>Portalegre</option>
-				<option>Porto</option>
-				<option>Santarém</option>
-				<option>Setúbal</option>
-				<option>Viana do Castelo</option>
-				<option>Vila Real</option>
-				<option>Viseu</option>
-			</select>
+		<label class="item item-select">
+		<center><h4>{{selections}}</h4></center>
+			<span class="nullable">
+				<select ng-model="selections" ng-options="i.id as i.name for i in localizacoes" 
+						ng-change="buscaLocalizacao()" >
+				  <option value="">Escolha um distrito</option>
+				</select>
+			</span>
 		</label>
-	</form>
-	
+		<center><h4>{{selections}}</h4></center>
+		
 	 <ion-list>
       <ion-item class="item item-thumbnail-left" ng-repeat="item in items" href="#/localizacao/{{item.IdEstabelecimento}}">
 	  <img ng-src="http://www.caetanoretail.pt/pt/_layouts/15/CanalInternet/services/IntegrationsImagesHandler.ashx?filename=company41_instalation413_photo2.jpg&contextname=PLATFORMS" height="50" width="50">
