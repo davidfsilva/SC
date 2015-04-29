@@ -44,8 +44,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ListCtrl', function($scope, $http) {
+
 	$scope.selections = "";
 $scope.localizacoes = [
+		{id:'Escolha', name:'Escolha um Distrito'},
 		{id:'Aveiro', name:'Aveiro'},
 		{id:'Beja', name:'Beja'},
 		{id:'Braga', name:'Braga'},
@@ -65,29 +67,47 @@ $scope.localizacoes = [
 		{id:'Vila Real', name:'Vila Real'},
 		{id:'Viseu', name:'Viseu'}
 	];	
-	
-	
+	$scope.selections = $scope.localizacoes[0].name;
 
-$scope.buscaLocalizacao = function() {
-	
-	
-	alert($scope.selections);
+$scope.buscaLocalizacao = function(varia) {
 	
 	$http({
             method: 'GET',
-            url: 'http://app-salvadorcaetano.rhcloud.com/localizacao.php?jsoncallback'
+            url: 'http://app-salvadorcaetano.rhcloud.com/localizacao.php?jsoncallback'+ varia+''
         }).success(function(data) {
-            //$scope.items = data; // response data 
-			    
-				if(localizacaoDistritos.Distrito == "Braga")
-				{
-					alert("essad");
-					
-				}
+            $scope.items = data; // response data 
+
         }).error(function(data) {
             console.log("failed");
         });
 };		
+})
+
+.controller('CardCtrl', function($scope, $ionicModal, $http) {
+  // Form data for the login modal
+  $scope.CardData = {};
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/LocalizacaoCard.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeCard = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.openCard = function() {
+    $scope.modal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.doLocalizacaoCard = function() {
+  
+  };
 })
 
  .controller('PerfilCtrl', function ($scope) {

@@ -124,6 +124,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 		  controller: 'AppCtrl'
         }
       }
+    })
+	
+	.state('app.localizacaoCard', {
+      url: "/localizacaoCard",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/localizacaoCard.html",
+		  controller: 'CardCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/inicio');
