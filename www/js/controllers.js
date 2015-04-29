@@ -73,7 +73,7 @@ $scope.buscaLocalizacao = function(varia) {
 	
 	$http({
             method: 'GET',
-            url: 'http://app-salvadorcaetano.rhcloud.com/localizacao.php?jsoncallback'+ varia+''
+            url: 'http://app-salvadorcaetano.rhcloud.com/localizacao.php?jsoncallback&distrito='+ varia+''
         }).success(function(data) {
             $scope.items = data; // response data 
 
