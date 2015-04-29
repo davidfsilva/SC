@@ -137,7 +137,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 	
 	.state('app.localizacaoCard', {
-      url: "/localizacaoCard",
+      url: "/localizacao/localizacaoCard",
       views: {
         'menuContent': {
           templateUrl: "templates/localizacaoCard.html",
