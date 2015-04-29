@@ -1,7 +1,7 @@
 <ion-view view-title="Localização">
   <ion-content >
-		<label class="item item-select">
-		<center><h4>{{selections}}</h4></center>
+		<label class="item item-select"> 
+		<center>&nbsp;</center>
 			<span class="nullable">
 				<select ng-model="selections" ng-options="i.name as i.name for i in localizacoes" ng-change="buscaLocalizacao(selections)">
 				</select>
@@ -16,19 +16,19 @@
 		<h3>{{item.Localidade}}</h3>
 		<h4>{{item.Morada}}</h4>
 		<span ng-if="item.Oficina == 1">
-		<IMG SRC="/img/icons/oficina.png" height="20" width="20" name="Oficina">
+		<IMG SRC="img/icons/oficina.png" height="20" width="20" name="Oficina">
 		</span>
 		<span ng-if="item.Novos == 1">
-		<IMG SRC="/img/icons/novos.png" height="20" width="20" name="Novos">
+		<IMG SRC="img/icons/novos.png" height="20" width="20" name="Novos">
 		</span>
 		<span ng-if="item.Usados == 1">
-		<IMG SRC="/img/icons/usados.png" height="20" width="20" name="Usados">
+		<IMG SRC="img/icons/usados.png" height="20" width="20" name="Usados">
 		</span>
 		<span ng-if="item.Pecas == 1">
-		<IMG SRC="/img/icons/pecas.png" height="20" width="20" name="Pecas">
+		<IMG SRC="img/icons/pecas.png" height="20" width="20" name="Pecas">
 		</span>
 		<span ng-if="item.Colisao == 1">
-		<IMG SRC="/img/icons/colisao.png" height="20" width="20" name="Colisao">
+		<IMG SRC="img/icons/colisao.png" height="20" width="20" name="Colisao">
 		</span>
       </ion-item>
     </ion-list>

@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http, $location) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
   $scope.login = function() {
     $scope.modal.show();
   };
-
+  
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
 	var user = $scope.loginData.username;
@@ -83,6 +83,10 @@ $scope.buscaLocalizacao = function(varia) {
 };		
 })
 
+.controller('RegistoCtrl', function($scope){
+alert("ok");
+})
+
 .controller('CardCtrl', function($scope, $ionicModal, $http) {
   // Form data for the login modal
   $scope.CardData = {};
@@ -120,6 +124,10 @@ $scope.buscaLocalizacao = function(varia) {
 
  .controller('DefinicoesCtrl', function ($scope) {
 	$scope.DefinicoesnavTitle = 'Definições <span class="navbar-right"><i class=" icon ion-gear-b"></i></span>'; 
+})
+
+ .controller('RegistoCtrl', function ($scope) {
+	$scope.RegistonavTitle = 'Novo Utilizador <span class="navbar-right"><i class=" icon ion-person-add"></i></span>'; 
 })
 
  .controller('ContactosCtrl', function ($scope) {

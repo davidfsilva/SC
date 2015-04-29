@@ -126,6 +126,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 	
+	.state('app.registo', {
+      url: "/registo",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/registo.html",
+		  controller: 'RegistoCtrl'
+        }
+      }
+    })
+	
 	.state('app.localizacaoCard', {
       url: "/localizacaoCard",
       views: {
